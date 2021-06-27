@@ -3,21 +3,29 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <header>
-        <div>My Book Library</div>
+        <div>Book Library</div>
     </header>
     <body>
+        <div id = 'inputInfo'>Enter your Book details here</div>
         <div id = 'enterInfo'>
             <input type="text" class = 'bookInput' id = 'titleInput'></input>
             <input type="text" class = 'bookInput' id = 'authorInput'></input>
             <input type="text" class = 'bookInput' id = 'pageInput'></input>
             <select id = 'readSelect'>
+                <option value = 'default'>Select a Status</option>
                 <option value = 'read'>Read</option>
                 <option value = 'notread'>Not Read</option>
             </select>
         </div>
-        <button id = 'newBookButton'> Add Book</button>
-        <button id = 'showEntireLib'>Show Entire Library</button>
-        <div class = 'library'></div>
+        <button id = 'newBookButton'>Submit</button>
+        <table id = 'library'>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Total Pages</th>
+                <th>Status</th>
+            </tr>
+        </table>
     </body>
     <script src="script.js"></script>
 </html>
