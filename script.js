@@ -9,10 +9,11 @@ function Book(title, author, pages, read){
 }
 
 function addBookToLib(){
-    let newTitle = prompt("Enter a title")
-    let newAuthor = prompt("Enter the Author")
-    let pageNumber = prompt("Enter Page Number")
-    let newBook = new Book(newTitle, newAuthor, pageNumber, 'no');
+    let newTitle = document.getElementById('titleInput').value;
+    let newAuthor = document.getElementById('authorInput').value;
+    let pageNumber = document.getElementById('pageInput').value;
+    let newRead = document.getElementById('readSelect').value;
+    let newBook = new Book(newTitle, newAuthor, pageNumber, newRead);
     myLib.push(newBook);
 }
 
@@ -59,6 +60,7 @@ function deleteButton(i, appendLoc){
     deleteBook.innerHTML = 'Delete';
     deleteBook.addEventListener('click', () =>{
         let deleteDOM = document.getElementById(i);
+        console.log(deleteDOM);
         deleteDOM.remove();
         delete myLib[i];
         console.table(myLib)
@@ -78,3 +80,10 @@ function displayAllBooks(){
 
 document.querySelector('#newBookButton').addEventListener('click', addBookToLib);
 document.querySelector('#showEntireLib').addEventListener('click', displayAllBooks);
+
+// if(document.querySelector('#readSelect').value === 'notread'){
+//     newReadButton.innerHTML = 'Not Read';
+// }
+// else{
+//     newReadButton.innerHTML = 'Read';
+// }
