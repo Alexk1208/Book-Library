@@ -14,11 +14,15 @@ function addBookToLib(){
     let pageNumber = document.getElementById('pageInput').value;
     let newRead = document.getElementById('readSelect').value;
     if(newTitle === '' || newAuthor === '' || pageNumber === '' || newRead === 'default'){
-        return alert('Please Fill in All Details!')
+        return alert('Please Fill in All Details!');
     }
+    else if(isNaN(pageNumber)){
+        return alert('Please add a valid page count');
+    };
     let newBook = new Book(newTitle, newAuthor, pageNumber, newRead);
     myLib.push(newBook);
 }
+
 function removeTextFromInput(){
     document.getElementById('titleInput').value = '';
     document.getElementById('authorInput').value = '';

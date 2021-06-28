@@ -1,31 +1,42 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
     </head>
-    <header>
-        <div>Book Library</div>
-    </header>
     <body>
-        <div id = 'inputInfo'>Enter your Book details here</div>
-        <div id = 'enterInfo'>
-            <input type="text" class = 'bookInput' id = 'titleInput'></input>
-            <input type="text" class = 'bookInput' id = 'authorInput'></input>
-            <input type="text" class = 'bookInput' id = 'pageInput'></input>
-            <select id = 'readSelect'>
-                <option value = 'default'>Select a Status</option>
-                <option value = 'read'>Read</option>
-                <option value = 'notread'>Not Read</option>
-            </select>
+        <div id = 'entireBlock'>
+            <h1>
+                <div id = "libTitle">Book Library</div>
+            </h1>
+            <div id = 'inputInfo'>This is a Dictionary project that I have made utilizing concepts I have learned from 
+                <a href = 'www.theodinproject.com'>The Odin Project</a>.
+                <br>
+                You can view the
+                <a href = 'https://github.com/akirakami8/Book-Library'>Github Repository</a>
+                from the embedded link.
+            </div>
+            <div id = 'enterBookText'>Enter Your Book Details Below</div>
+            <div id = 'enterInfo'>
+                <input type="text" class = 'bookInput' id = 'titleInput' placeholder="Title"></input>
+                <input type="text" class = 'bookInput' id = 'authorInput' placeholder="Author"></input>
+                <input type="text" class = 'bookInput' id = 'pageInput' placeholder="Page Count"></input>
+                <select id = 'readSelect'>
+                    <option value = 'default'>Select a Status</option>
+                    <option value = 'read'>Read</option>
+                    <option value = 'notread'>Not Read</option>
+                </select>
+                <button id = 'newBookButton'>ADD</button>
+            </div>
+            <table id = 'library'>
+                <tr>
+                    <th class = "titleHeader">Title</th>
+                    <th class = "titleHeader">Author</th>
+                    <th class = "titleHeader">Total Pages</th>
+                    <th class = "titleHeader">Status</th>
+                </tr>
+            </table>
         </div>
-        <button id = 'newBookButton'>Submit</button>
-        <table id = 'library'>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Total Pages</th>
-                <th>Status</th>
-            </tr>
-        </table>
     </body>
     <script src="script.js"></script>
 </html>
