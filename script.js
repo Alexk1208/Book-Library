@@ -21,6 +21,7 @@ function addBookToLib(){
     };
     let newBook = new Book(newTitle, newAuthor, pageNumber, newRead);
     myLib.push(newBook);
+    saveToLocalStorage();
 }
 
 function removeTextFromInput(){
@@ -61,19 +62,20 @@ function addBookName(object, appendLoc, i) {
 function readButton(object, appendLoc){
     let readButtonDisplay = document.createElement('td');
     let newReadButton = document.createElement('button');
+    newReadButton.setAttribute('class', 'readButton');
     if(object.read === 'read'){
-        newReadButton.innerHTML = 'Read'
+        newReadButton.innerHTML = 'READ'
     }
     else{
-        newReadButton.innerHTML = 'Not Read'
+        newReadButton.innerHTML = 'NOT READ'
     }
     newReadButton.addEventListener('click', () =>{
         if(object.read === 'read'){
-            newReadButton.innerHTML = 'Not Read';
+            newReadButton.innerHTML = 'NOT READ';
             object.read = 'notread'
         }
         else{
-            newReadButton.innerHTML = 'Read';
+            newReadButton.innerHTML = 'READ';
             object.read = 'read'
         }
     })
@@ -84,14 +86,30 @@ function readButton(object, appendLoc){
 function deleteButton(i, appendLoc){
     let deleteButtonDisplay = document.createElement('td');
     let deleteBook = document.createElement('button')
-    deleteBook.innerHTML = 'Delete';
+    deleteBook.setAttribute('class', 'deleteButton');
+    deleteBook.innerHTML = 'DELETE';
     deleteBook.addEventListener('click', () =>{
         let deleteDOM = document.getElementById(i);
         deleteDOM.remove();
         delete myLib[i];
+        saveToLocalStorage();
     });
     deleteButtonDisplay.appendChild(deleteBook);
     appendLoc.appendChild(deleteButtonDisplay);
+}
+
+function saveToLocalStorage(){
+    localStorage.setItem('library', JSON.stringify(myLib));
+}
+
+function getLocalStorageOnStart(){
+    if(!(localStorage.getItem('library'))){
+        myLib = [];
+        console.log(myLib)
+    }
+    else{
+        myLib = JSON.parse(localStorage.getItem('library'));
+    };
 }
 
 function displayAllBooks(){
@@ -108,6 +126,10 @@ function appendBook(){
     displayAllBooks();
 }
 
+function renderStart(){
+    getLocalStorageOnStart();
+    displayAllBooks();
+}
 
-
+renderStart();
 document.querySelector('#newBookButton').addEventListener('click', appendBook);

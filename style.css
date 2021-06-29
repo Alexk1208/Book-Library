@@ -1,5 +1,5 @@
 html{
-    background-color: rgb(248, 235, 253);
+    background-color: rgb(216, 216, 216);
 }
 
 body{
@@ -9,7 +9,7 @@ body{
 }
 
 #entireBlock{
-    width: 800px;
+    width: 1000px;
     color: rgb(71, 71, 71);
 }
 
@@ -19,7 +19,6 @@ body{
     font-weight: 500;
     color: rgb(32, 32, 32);
     text-align: left;
-
 }
 
 #enterBookText{
@@ -27,40 +26,43 @@ body{
     padding-left: 20px;
 }
 
+#enterInfo{
+    display: flex;
+    justify-content: space-around;
+    margin-right: auto;
+}
+
 #inputInfo{
     padding-bottom:  30px;
     padding-left: 20px;
 }
 
-#enterInfo{
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 10px;
-}
-
 .bookInput{
-    height: 30px;
+    font-size: 15px;
+    height: 40px;
     border-radius: 5px;
     border-width: 1px;
     outline: rgb(169, 250, 164);
-    border-color: rgb(190, 190, 190);
+    border: 1px solid rgb(189, 189, 189);
     box-shadow: none;
 }
 #readSelect{
     font-family: 'Lora', serif;
-    height: 30px;
+    color: rgb(71, 71, 71);
+    height: 40px;
     border-radius: 5px;
     border-width: 1px;
+    border: 1px solid rgb(189, 189, 189);
     background-color: white;
-    outline: none;
+    outline: blue;
 }
 
 #newBookButton{
     width: 70px;
     font-family: 'Lora', serif;
     border: none;
-    opacity: 0.8;
-    background-color: rgb(0, 255, 128);
+    opacity: 0.7;
+    background-color: rgb(0, 163, 82);
     border-radius: 5px;
     color: white;
     font-weight: 900;
@@ -70,21 +72,68 @@ body{
     opacity: 1;
 }
 
+#libraryHold{
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
 #library{
+    padding-top: 40px;
+    width: 1000px;
     border-collapse: collapse;
-    display: flex;
-    justify-content: space-evenly;
+    font-size: 20px;
+    border-spacing: 0;
 }
 tr{
     border: solid;
     border-width: 0.5px 0;
     border-color: rgb(190, 190, 190);
-    display: flex;
-    justify-content: space-evenly;
+    display: table-row;
+    text-align: left;
+    padding-bottom: 5em;
 }
+th{
+    padding-bottom: 1em;
+}
+
 tr:first-child{
     border-top: none;
 }
-tr:last-child{
-    border-bottom: none;
+
+td{
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+
+.deleteButton{
+    height: 40px;
+    width: 80px;
+    font-family: 'Lora', serif;
+    border: none;
+    opacity: 0.7;
+    background-color: rgb(255, 86, 94);
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+}
+
+.deleteButton:hover{
+    opacity: 1;
+}
+
+.readButton{
+    height: 40px;
+    width: 80px;
+    font-family: 'Lora', serif;
+    border: none;
+    opacity: 0.7;
+    background-color: rgb(250, 180, 29);
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+}
+
+.readButton:hover{
+    opacity: 1;
 }
